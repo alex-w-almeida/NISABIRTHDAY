@@ -1,0 +1,1259 @@
+/* ================================
+   FUENTES
+================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Courgette&family=DM+Sans:wght@400;500;600&family=Shrikhand&display=swap');
+
+/* ================================
+   VARIABLES
+================================ */
+
+:root {
+
+    /* ROSA */
+    --pink-light: #ebc0ff;
+    --pink: #ff96e0;
+    --pink-dark: #f70f5c;
+
+    /* AZUL */
+    --blue-light: #91bedbc7;
+    --blue: #77b5d6;
+    --blue-dark: #5791b4;
+
+    /* ROJO */
+    --red-soft: #c0002a;
+    --red: #a34b9f;
+    --red-dark: #1100acad;
+
+    /* CAFÉ */
+    --brown: #8a6758;
+    --brown-dark: #ff3ba7;
+
+    /* BEIGE */
+    --beige: #ffd2dc;
+    --cream: #f5e0c3;
+
+    /* LILA */
+    --lilac-light: #f1eafa;
+    --lilac: #c4a8dd;
+    --lilac-dark: #a587d3;
+
+    /* BLANCO */
+    --white: #fffdfd;
+
+    /* NEGRO */
+    --black: #292326ce;
+
+    /* TEXTO */
+    --text: #493b3b;
+    --text-light: #754d4d;
+
+    /* SOMBRA */
+    --shadow: 0 15px 40px rgba(99, 40, 64, 0.664);
+}
+
+
+/* ================================
+   RESET
+================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--pink-light);
+    color: var(--text);
+
+    font-family: 'DM Sans', sans-serif;
+
+    line-height: 1.5;
+
+    overflow-x: hidden;
+}
+
+
+/* ================================
+   ELEMENTOS GENERALES
+================================ */
+
+main {
+    width: 100%;
+}
+
+section {
+    position: relative;
+
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+
+    padding: 90px 20px;
+}
+
+.content-container {
+    width: 100%;
+    max-width: 850px;
+
+    margin: 0 auto;
+}
+
+.section-label {
+    margin-bottom: 10px;
+
+    color: var(--red-soft);
+
+    font-size: 0.78rem;
+    font-weight: 600;
+
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Shrikhand', cursive;
+    font-weight: 300;
+    line-height: 1.15;
+}
+
+
+h2 {
+    margin-bottom: 25px;
+
+    font-size: clamp(2.3rem, 8vw, 4.5rem);
+
+    color: var(--brown-dark);
+}
+
+h3 {
+    margin-bottom: 10px;
+
+    font-size: 1.8rem;
+
+    color: var(--brown-dark);
+}
+
+p {
+    font-size: 1rem;
+}
+
+.intro-text,
+.section-description,
+.birthday-text,
+.distance-text,
+.final-message p {
+    max-width: 650px;
+
+    color: var(--text-light);
+
+    font-size: 1.05rem;
+}
+
+
+/* ================================
+   PORTADA
+================================ */
+
+.hero {
+    min-height: 100svh;
+
+    background:
+        radial-gradient(
+            circle at 20% 20%, 
+            rgba(175, 22, 78, 0.9)
+            transparent 26%
+        )
+
+        radial-gradient(
+            circle at 80% 75%, 
+            rgba(113, 174, 207, 0.8)
+            transparent 5%
+        ),
+        radial-gradient(
+            circle at 50%100%,
+            rgba(81, 32, 128, 0.678)
+            transparent 26%
+        )
+
+        linear-gradient(
+            135deg,
+            var(--pink-light),
+            var(--beige),
+            var(--lilac-light)
+        );
+
+    text-align: center;
+
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+.hero::before {
+    content: "♡";
+
+    position: absolute;
+
+    top: 12%;
+    left: 10%;
+
+    font-size: 3rem;
+
+    color: rgba(47, 207, 140, 0.25);
+
+    animation: floating 5s ease-in-out infinite;
+}
+
+.hero::after {
+    content: "✦";
+
+    position: absolute;
+
+    right: 12%;
+    bottom: 20%;
+
+    font-size: 2rem;
+
+    color: rgba(78, 54, 45, 0.137);
+
+    animation: floating 6s ease-in-out infinite reverse;
+}
+
+.hero-content {
+    max-width: 750px;
+
+    position: relative;
+
+    z-index: 2;
+
+    animation: fadeUp 1.2s ease forwards;
+}
+
+.eyebrow {
+    margin-bottom: 15px;
+
+    color: var(--red-soft);
+
+    font-size: 0.8rem;
+    font-weight: 600;
+
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.hero h1 {
+    margin-bottom: 20px;
+
+    font-size: clamp(3.2rem, 13vw, 6.5rem);
+
+    color: var(--brown-dark);
+}
+
+.hero-subtitle {
+    margin-bottom: 15px;
+    font-family: 'Courgette', cursive;
+    font-size: 1.7rem;
+    color: var(--red-soft);
+}
+
+.hero-intro {
+    max-width: 580px;
+
+    margin: 0 auto;
+
+    color: var(--text-light);
+
+    font-size: 1rem;
+}
+
+.scroll-indicator {
+    margin-top: 60px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 8px;
+
+    color: var(--text-light);
+
+    font-size: 0.8rem;
+
+    animation: softBounce 2s ease-in-out infinite;
+}
+
+.scroll-arrow {
+    font-size: 1.5rem;
+}
+
+
+/* ================================
+   INTRODUCCIÓN
+================================ */
+
+.introduction {
+    background: var(--cream);
+    text-align: center;
+}
+
+.introduction .content-container {
+    max-width: 700px;
+}
+
+.introduction .intro-text {
+    margin: 0 auto 20px;
+}
+
+
+/* ================================
+   ESTRELLAS ASCII
+================================ */
+.ascii-art {
+    width: 100%;
+    margin: 40px auto 25px;
+    padding: 35px 10px;
+    border-radius: 25px;
+    background: rgba(0, 6, 88, 0.87);
+    box-shadow: var(--shadow);
+    color: var(--brown);
+
+    font-family: monospace;
+    font-size: clamp(0.45rem, 1.8vw, 1rem);
+    line-height: 1.25;
+
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    word-break: break-all;
+
+    overflow-x: hidden;
+    box-sizing: border-box;
+    text-align: center;
+}
+/*  Ajuste para celulares */
+@media (max-width: 600px) {
+    .ascii-art {
+        font-size: 0.42rem;
+        line-height: 1.15;
+        padding: 25px 3px;
+        margin: 30px auto 20px;
+    }
+}
+
+/* ========================================
+   EL DÍA QUE NACISTE
+======================================== */
+
+.birth-stars {
+    background: var(--white);
+    color: var(--black);
+    overflow: hidden;
+}
+
+.birth-stars-intro {
+    min-height: 55vh;
+    padding: 100px 25px 70px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+.birth-stars-intro .section-label {
+    margin-bottom: 18px;
+}
+
+.birth-stars-intro h2 {
+    margin: 0 0 25px;
+}
+
+.birth-stars-intro > p:last-child {
+    max-width: 550px;
+    margin: 0 auto;
+
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1rem;
+    line-height: 1.7;
+
+    opacity: 0.8;
+}
+
+
+/* FOTO */
+
+.birth-stars-photo {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    min-height: 650px;
+
+    overflow: hidden;
+}
+
+.birth-stars-photo img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+    object-position: center;
+}
+
+
+/* OSCURECER LA PARTE INFERIOR */
+
+.birth-stars-photo::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to bottom,
+            transparent 35%,
+            rgba(0, 0, 0, 0.05) 50%,
+            rgba(0, 0, 0, 0.85) 100%
+        );
+
+    pointer-events: none;
+}
+
+
+/* TEXTO SOBRE LA FOTO */
+
+.birth-stars-text {
+    position: absolute;
+
+    z-index: 2;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    padding: 100px 25px 45px;
+
+    text-align: center;
+
+    color: white;
+}
+
+.birth-stars-text p {
+    max-width: 650px;
+
+    margin: 0 auto 15px;
+
+    font-family: 'Courgette', cursive;
+    font-size: 1.4rem;
+    line-height: 1.5;
+}
+
+.birth-stars-text span {
+    display: block;
+
+    max-width: 550px;
+
+    margin: 0 auto;
+
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem;
+    line-height: 1.6;
+
+    opacity: 0.85;
+}
+
+
+/* TABLET */
+
+@media (min-width: 600px) {
+
+    .birth-stars-intro {
+        padding-left: 60px;
+        padding-right: 60px;
+    }
+
+    .birth-stars-text {
+        padding-left: 60px;
+        padding-right: 60px;
+        padding-bottom: 60px;
+    }
+
+    .birth-stars-text p {
+        font-size: 1.7rem;
+    }
+
+}
+
+
+/* DESKTOP */
+
+@media (min-width: 900px) {
+
+    .birth-stars-intro {
+        min-height: 60vh;
+        padding-top: 120px;
+        padding-bottom: 90px;
+    }
+
+    .birth-stars-photo {
+        height: 100vh;
+    }
+
+    .birth-stars-text {
+        padding-bottom: 75px;
+    }
+
+}
+
+/* ================================
+   FOTOS
+================================ */
+
+.memories {
+    background:
+        linear-gradient(
+            180deg,
+            var(--pink-light),
+            var(--lilac-light),
+            var(--blue-light)
+        );
+}
+
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-top: 40px;
+}
+
+.photo-placeholder {
+    aspect-ratio: 1 / 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    background:
+        linear-gradient(
+            135deg,
+            var(--cream),
+            var(--blue)
+        );
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition:
+        transform 0.4s ease;
+}
+
+.photo-placeholder img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: contain;
+    border-radius: 20px;
+}
+
+.photo-placeholder:hover {
+    transform: rotate(-2deg) scale(1.03);
+}
+
+/* ================================
+   RAZONES
+================================ */
+
+.reasons {
+    background:
+        linear-gradient(
+            135deg,
+            var(--pink-light),
+            var(--cream)
+        );
+}
+.reasons-list {
+    margin-top: 35px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 15px;
+}
+
+.reasons-list p {
+
+    position: relative;
+
+    padding: 20px 25px 20px 55px;
+
+    border-radius: 20px;
+
+    background: rgba(255, 255, 255, 0.75);
+
+    box-shadow: var(--shadow);
+
+    color: var(--text);
+
+    opacity: 0;
+
+    transform: translateX(100px);
+
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+}
+
+.reasons-list p.visible {
+
+    opacity: 1;
+
+    transform: translateX(0);
+
+}
+
+.reasons-list p.visible:hover {
+    transform: translateX(7px);
+}
+.reasons-list p::before {
+    content: "♡";
+
+    position: absolute;
+
+    left: 22px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    color: var(--red-soft);
+
+    font-size: 1.3rem;
+}
+
+
+/* ================================
+   DISTANCIA
+================================ */
+
+.distance {
+    background:
+        linear-gradient(
+            135deg,
+            var(--blue-light),
+            var(--lilac-light)
+        );
+    text-align: center;
+}
+
+.distance-visual {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 20px;
+
+    margin: 60px 0 40px;
+}
+
+.distance-point {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 5px;
+}
+
+.distance-point span {
+    width: 65px;
+    height: 65px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: rgba(159, 236, 169, 0.8);
+
+    color: var(--red-soft);
+
+    font-size: 2rem;
+
+    box-shadow: var(--shadow);
+
+    animation: heartbeat 2.5s infinite;
+}
+
+.distance-point small {
+    color: var(--text-light);
+
+    font-size: 0.8rem;
+}
+
+.distance-line {
+    width: 200px;
+
+    height: 4px;
+
+    background: repeating-linear-gradient(
+        to right,
+        var(--red-soft) 0 8px,
+        transparent 8px 16px
+    );
+}
+
+
+/* ================================
+   CARTA
+================================ */
+
+/* ========================================
+   CARTA / SOBRE
+======================================== */
+
+.letter-section {
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--pink-light),
+            var(--beige),
+            var(--lilac-light)
+        );
+
+    overflow: hidden;
+}
+
+
+/* CONTENEDOR DEL SOBRE */
+
+.envelope-container {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 80px 20px 100px;
+
+}
+
+
+/* SOBRE */
+
+.envelope {
+
+    position: relative;
+
+    width: min(90vw, 430px);
+    height: 285px;
+
+    cursor: pointer;
+
+    perspective: 1200px;
+
+}
+
+
+/* PARTE TRASERA */
+
+.envelope-back {
+
+    position: absolute;
+
+    inset: 0;
+
+    background: var(--red-soft);
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 20px 50px rgba(80, 50, 40, 0.25);
+
+    z-index: 1;
+
+}
+
+
+/* CARTA */
+
+.letter {
+
+    position: absolute;
+
+    left: 7%;
+    right: 7%;
+    top: 5%;
+
+    height: 90%;
+
+    margin: 0;
+
+    padding: 30px 25px;
+
+    background: var(--cream);
+
+    border-radius: 5px;
+
+    box-shadow:
+        0 10px 25px rgba(80, 50, 40, 0.15);
+
+    border-left: 4px solid var(--pink-dark);
+
+    overflow-y: auto;
+
+    color: var(--text);
+
+    z-index: 2;
+
+    opacity: 1;
+
+    transform: translateY(0);
+
+    transition:
+        transform 0.9s ease 0.2s;
+
+}
+
+
+/* CORAZÓN DE LA CARTA */
+
+.letter::before {
+
+    content: "♡";
+
+    position: absolute;
+
+    top: 15px;
+    right: 20px;
+
+    color: var(--pink-dark);
+
+    font-size: 1.5rem;
+
+}
+
+
+/* TEXTO */
+
+.letter p {
+
+    margin-bottom: 20px;
+
+    color: var(--text-light);
+
+    line-height: 1.7;
+
+}
+
+
+/* SALUDO */
+
+.letter-greeting {
+
+    font-family: 'Courgette', cursive;
+
+    font-size: 1.7rem;
+
+    color: var(--brown-dark) !important;
+
+}
+
+
+/* FIRMA */
+
+.letter-signature {
+
+    margin-top: 35px;
+
+    font-family: 'Courgette', cursive;
+
+    font-size: 1.4rem;
+
+    color: var(--brown-dark) !important;
+
+}
+
+
+/* FRENTE DEL SOBRE */
+
+.envelope-front {
+
+    position: absolute;
+
+    inset: 0;
+
+    background: var(--pink);
+
+    clip-path:
+        polygon(
+            0 35%,
+            50% 75%,
+            100% 35%,
+            100% 100%,
+            0 100%
+        );
+
+    border-radius:
+        0 0 10px 10px;
+
+    z-index: 4;
+
+}
+
+
+/* SOLAPA DEL SOBRE */
+
+.envelope-flap {
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 65%;
+
+    background: var(--pink-dark);
+
+    clip-path:
+        polygon(
+            0 0,
+            100% 0,
+            50% 100%
+        );
+
+    transform-origin: top center;
+
+    transition:
+        transform 0.9s ease;
+
+    z-index: 5;
+
+}
+
+
+/* SOBRE ABIERTO */
+
+.envelope.open .envelope-flap {
+
+    transform: rotateX(180deg);
+
+}
+
+.envelope.open .letter {
+
+    transform: translateY(-55%);
+
+}
+
+
+/* TEXTO DE "TOCA PARA ABRIR" */
+
+.envelope-hint {
+
+    margin-top: 25px;
+
+    font-family: 'Courgette', cursive;
+
+    font-size: 1.1rem;
+
+    color: var(--red-soft);
+
+    transition:
+        opacity 0.4s ease;
+
+}
+
+
+/* OCULTAR LA INDICACIÓN AL ABRIR */
+
+.envelope.open + .envelope-hint {
+
+    opacity: 0;
+
+}
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (min-width: 600px) {
+
+    .envelope {
+
+        width: 500px;
+        height: 335px;
+
+    }
+
+    .letter {
+
+        padding: 35px 30px;
+
+    }
+
+}
+
+
+/* ========================================
+   PC
+======================================== */
+
+@media (min-width: 900px) {
+
+    .envelope-container {
+
+        padding-top: 110px;
+        padding-bottom: 130px;
+
+    }
+
+    .envelope {
+
+        width: 560px;
+        height: 375px;
+
+    }
+
+    .letter {
+
+        padding: 40px 35px;
+
+        font-size: 1rem;
+
+    }
+
+}
+
+/* ================================
+   FINAL
+================================ */
+
+.final-message {
+    min-height: 90vh;
+
+background:
+    radial-gradient(
+        circle at 20% 30%,
+        rgba(244, 198, 215, 0.8),
+        transparent 35%
+    ),
+    radial-gradient(
+        circle at 80% 70%,
+        rgba(214, 195, 232, 0.7),
+        transparent 25%
+    ),
+    linear-gradient(
+        160deg,
+        var(--pink),
+        var(--beige),
+        var(--blue-light)
+    );
+
+    text-align: center;
+}
+
+.final-message .content-container {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+}
+
+.final-message p {
+    margin-bottom: 15px;
+}
+
+.final-heart {
+    margin-top: 45px;
+
+    font-size: 4rem;
+
+    animation: heartbeat 2s ease-in-out infinite;
+}
+
+
+/* ================================
+   ANIMACIONES
+================================ */
+
+@keyframes fadeUp {
+
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+@keyframes floating {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+
+}
+
+@keyframes softBounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(8px);
+    }
+
+}
+
+@keyframes heartbeat {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    10% {
+        transform: scale(1.08);
+    }
+
+    20% {
+        transform: scale(1);
+    }
+
+    30% {
+        transform: scale(1.08);
+    }
+
+    40% {
+        transform: scale(1);
+    }
+
+}
+
+
+/* ================================
+   TABLET
+================================ */
+
+@media (min-width: 600px) {
+
+    section {
+        padding: 110px 40px;
+    }
+
+    .photo-gallery {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .story-item {
+        padding: 35px;
+    }
+
+    .letter {
+        padding: 50px;
+    }
+
+}
+
+
+/* ================================
+   DESKTOP
+================================ */
+
+@media (min-width: 900px) {
+
+    section {
+        padding: 130px 60px;
+    }
+
+    .content-container {
+        max-width: 900px;
+    }
+
+    .hero h1 {
+        font-size: 6rem;
+    }
+
+    .photo-gallery {
+        gap: 25px;
+    }
+
+    .story-item {
+        padding: 40px;
+    }
+
+}
+
+
+/* ================================
+   TELÉFONOS PEQUEÑOS
+================================ */
+
+@media (max-width: 380px) {
+
+    section {
+        padding: 75px 16px;
+    }
+
+    .hero h1 {
+        font-size: 2.8rem;
+    }
+
+    h2 {
+        font-size: 2.2rem;
+    }
+
+    .story-item {
+        padding: 24px 20px;
+    }
+
+    .distance-line {
+        width: 65px;
+    }
+
+}
+
+/* ================================
+   REDUCIR ANIMACIONES SI EL
+   DISPOSITIVO LO PREFIERE
+================================ */
+
+@media (prefers-reduced-motion: reduce){
+        *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+
+        scroll-behavior: auto !important;
+
+        transition-duration: 0.01ms !important;
+    }
+    }
