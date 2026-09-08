@@ -53,7 +53,7 @@ function crearCorazon() {
 
 setInterval(crearCorazon, 2500);
 // ========================================
-// ABRIR Y CERRAR LA CARTA
+// ABRIR LA CARTA
 // ========================================
 
 const envelope = document.getElementById("envelope");
