@@ -25,7 +25,6 @@ window.addEventListener("scroll", mostrarElementos);
 
 mostrarElementos();
 
-
 // ========================================
 // CORAZONES
 // ========================================
