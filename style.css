@@ -232,7 +232,7 @@ section::after {
     font-size: 1.5rem;
     line-height: 5;
     color: white;
-    opacity: 0.3;
+    opacity: 0.15;
 }
 
 .stars-section::after {
@@ -319,7 +319,7 @@ section::after {
     font-size: 1.6rem;
     line-height: 5;
     color: white;
-    opacity: 0.3;
+    opacity: 0.15;
 }
 
 .section-label {
